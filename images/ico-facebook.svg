@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85">
+  <g id="ico-facebook" transform="translate(0 -0.099)">
+    <path id="Icon_zocial-facebook" data-name="Icon zocial-facebook" d="M13.257,17.983v-6.4h5.158V8.372a8.416,8.416,0,0,1,2.259-5.927A7.188,7.188,0,0,1,26.15,0h5.124V6.4H26.15a1.128,1.128,0,0,0-.9.553,2.244,2.244,0,0,0-.4,1.356v3.282h6.429v6.4h-6.43V33.487h-6.43v-15.5Z" transform="translate(19.511 26.215)" fill="#0d9648"/>
+    <g id="Ellipse_23" data-name="Ellipse 23" transform="translate(0 0.099)" fill="none" stroke="#0d9648" stroke-width="1">
+      <circle cx="42.5" cy="42.5" r="42.5" stroke="none"/>
+      <circle cx="42.5" cy="42.5" r="42" fill="none"/>
+    </g>
+  </g>
+</svg>

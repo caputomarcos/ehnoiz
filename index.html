@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Nóiz - Construindo um futuro</title>
+    <style>
+        @font-face {
+            font-family: "Avenir Next Condensed";
+            src: url("fonts/AvenirNextCondensed-Medium.eot");
+            src: url("fonts/AvenirNextCondensed-Medium.woff2") format("woff2"),
+                url("fonts/AvenirNextCondensed-Medium.woff") format("woff"),
+                url("fonts/AvenirNextCondensed-Medium.html") format("truetype"),
+                url("fonts/AvenirNextCondensed-Medium.svg#AvenirNextCondensed-Medium") format("svg");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Source Sans Pro", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        div,
+        button,
+        input:focus {
+            outline: none;
+        }
+
+        /* Backgrounds */
+
+        .bg--green {
+            background-color: #0d9648;
+        }
+
+        .bg--dark_green {
+            background-color: #096c34;
+        }
+
+        .bg--light_blue {
+            background-color: #1e6588;
+        }
+
+        .bg--dark_blue {
+            background-color: #003652;
+        }
+
+        /* Fim Backgrounds */
+
+        /*BotÃµes*/
+
+        .btn {
+            margin: 0 auto;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: normal;
+            text-align: center;
+            text-decoration: none;
+            color: #002b63;
+            height: 65px;
+            line-height: 65px;
+            background: rgb(255, 212, 0);
+            background: linear-gradient(245deg,
+                    rgba(255, 212, 0, 1) 0%,
+                    rgba(251, 162, 0, 1) 100%);
+            -webkit-box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.16);
+            -moz-box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.16);
+        }
+
+        .btn--blue {
+            color: #fff;
+            background: rgb(57, 140, 181);
+            background: linear-gradient(245deg,
+                    rgba(57, 140, 181, 1) 0%,
+                    rgba(22, 95, 132, 1) 100%);
+        }
+
+        .btn-gradient {
+            margin: 40px 0;
+            display: block;
+            width: 355px;
+            height: 75px;
+            background: linear-gradient(-70deg, #398cb5, #165f84);
+            border-radius: 5px;
+            font-size: 29px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 73px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /*Fim BotÃµes*/
+
+        /* TÃ­tulos e Tipografia */
+
+        section h2 {
+            color: #165f84;
+            font-size: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        section h3 {
+            color: #ffb000;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        section p {
+            color: #5f5f5f;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: normal;
+            margin: 15px 0 18px;
+        }
+
+        /* Fim TÃ­tulos */
+
+        /* Header */
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            z-index: 99999;
+            min-height: 100px;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .header {
+            padding: 0;
+            border-bottom: 4px solid #0d9648;
+            min-height: 1px;
+        }
+
+        .header__logo img {
+            height: auto;
+            width: 198px;
+            margin-top: 12px;
+        }
+
+        .header__nav__main {
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .header__nav__mobile {
+            display: none;
+        }
+
+        .nav__list {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        .nav__item {
+            display: inline;
+            padding: 0 15px;
+        }
+
+        .nav__item:last-of-type {
+            margin-right: 0px;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: "Avenir Next Condensed";
+            color: #2f2610;
+            transition: all ease 0.2s;
+            line-height: 100px;
+        }
+
+        .nav__link:hover {
+            color: #0d9648;
+            font-weight: bold;
+        }
+
+        .tab_menu {
+            width: 100%;
+        }
+
+        .tab_menu .box a i svg {
+            height: 18px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: -4px;
+            margin-right: 7px;
+        }
+
+        .tab_menu .box {
+            border-left: 1px solid rgba(112, 112, 112, 0.2);
+            width: 24%;
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+            line-height: 100px;
+            margin-right: -4px;
+        }
+
+        .tab_menu .box a {
+            color: #0d9648;
+            text-decoration: none;
+            height: 100px;
+            display: block;
+            font-family: "Avenir Next Condensed";
+        }
+
+        .tab_menu .box a:hover {
+            background-color: #0d9648;
+            color: #fff;
+        }
+
+        .tab_menu .box a:hover i svg g path {
+            fill: #fff;
+        }
+
+        .tab_menu .box a:hover i svg path {
+            fill: #fff;
+        }
+
+        /* Fim Header */
+
+        /* Hero */
+
+        /* Banner */
+        .banner-container .banner-1 {
+            background: url(../images/bg1-index.jpg) no-repeat;
+            background-size: cover;
+            background-color: #151515;
+            width: 100%;
+            height: 700px;
+            margin-top: -40px;
+            padding-top: 70px;
+        }
+
+        .banner-container .banner-1 .banner-1-content {
+            text-align: left;
+            margin-top: 60px;
+        }
+
+        .banner-container .banner-1 .banner-1-content h2 {
+            font-size: 75px;
+            font-weight: 400;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 75px;
+        }
+
+        .banner-container .banner-1 .banner-1-content h2 strong {
+            font-weight: bold;
+        }
+
+        .banner-container .banner-1 .banner-1-content p {
+            font-size: 28px;
+            font-weight: 300;
+            color: #fba200;
+            margin-top: 20px;
+        }
+
+        .banner-container .banner-2 {
+            background: url(../images/bg2-index.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 700px;
+            margin-top: -10px;
+        }
+
+        .banner-container .banner-2 .banner-2-content {
+            margin-top: 60px;
+        }
+
+        .banner-container .banner-2 h2 {
+            font-size: 71px;
+            font-weight: 400;
+            color: #674732;
+            text-transform: uppercase;
+            margin-bottom: -35px;
+        }
+
+        .banner-container .banner-2 h3 {
+            font-size: 90px;
+            font-weight: bold;
+            color: #674732;
+            text-transform: uppercase;
+            margin-bottom: -20px;
+        }
+
+        .banner-container .banner-2 p {
+            font-size: 28px;
+            font-weight: 300;
+            color: #674732;
+        }
+
+        .banner-2 .btn-gradient {
+            margin-left: 0;
+        }
+
+        .banner-container .banner-3 {
+            background: url(../images/bg3-index.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 700px;
+            margin-top: -10px;
+        }
+
+        /* Fim Hero */
+
+        /* Banners Divisores */
+
+        .divisor {
+            position: relative;
+            padding: 30px 0 30px;
+            background-repeat: no-repeat;
+            background-position: center right;
+            background-size: cover;
+            width: 100%;
+            background-color: #fff;
+            height: 160px;
+            margin-top: -110px;
+            z-index: 999;
+        }
+
+        .divisor h2 {
+            font-size: 35px;
+            font-weight: 500;
+            color: #002b63;
+            text-transform: none;
+            margin-top: 25px;
+        }
+
+        .divisor2 .btn {
+            margin-top: 18px !important;
+            color: #002b63;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .divisor3 .btn {
+            margin-top: 18px !important;
+            color: #002b63;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .divisor .content__text-white h2 {
+            color: #fff;
+        }
+
+        .divisor h2 strong {
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline;
+        }
+
+        .divisor p {
+            font-size: 18px;
+            color: #002b63;
+            line-height: 22px;
+            margin-top: 5px;
+        }
+
+        .divisor a {
+            color: #fff;
+            height: 65px;
+            display: inline-block !important;
+            padding: 0 70px;
+        }
+
+        .divisor .col:last-child {
+            text-align: center;
+        }
+
+        .divisor .btn {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .divisor a strong {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .divisor1 {
+            background-image: url(../images/bg_socio_transformador.jpg);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            height: 166px;
+        }
+
+        .divisor1 h2 {
+            margin-top: 5px !important;
+        }
+
+        .divisor2 {
+            background-image: url(../images/bg_vaquinha.jpg);
+        }
+
+        .divisor3 {
+            background-image: url(../images/bg_seja_voluntario.jpg);
+        }
+
+        /* Fim Banners Divisores */
+
+        /* Projeto */
+
+        .project {
+            padding: 40px 0 80px 0;
+        }
+
+        .project h2 {
+            color: #ffffff;
+        }
+
+        .project p {
+            color: #ffffff;
+        }
+
+        .project .grid_7 {
+            padding-top: 60px;
+        }
+
+        .project .banner_project {
+            height: 428.45px;
+            width: auto;
+        }
+
+        .project__card {
+            padding: 0;
+            margin: 20px 0 0 0;
+            border-radius: 20px;
+            z-index: 2;
+            overflow: hidden;
+            -webkit-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.21);
+            -moz-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.21);
+            box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.21);
+        }
+
+        .project__card h3 {
+            color: #ffb000;
+            font-size: 25px;
+            font-weight: 600;
+            padding: 22px 25px 0 25px;
+        }
+
+        .project__card p {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: normal;
+            padding: 0 25px 29px 25px;
+            margin-bottom: 0;
+            min-height: 270px;
+        }
+
+        .project__card .banner_objective img {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        /* Fim Projeto */
+
+        /* RegiÃ£o */
+
+        .region {
+            padding: 0 0 80px 0;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: 50% 100%;
+            background-position: right bottom;
+            width: auto;
+            z-index: 1;
+        }
+
+        .region h2 {
+            padding: 80px 0 0 0;
+            color: #165f84;
+            clear: both;
+        }
+
+        .region .banner-regiao {
+            text-align: center;
+        }
+
+        .region .banner-regiao img {
+            border-radius: 20px;
+            -webkit-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .region article {
+            display: block;
+            color: #222;
+            text-transform: uppercase;
+            text-align: right;
+            font-size: 11px;
+            padding: 60px 0 10px 0;
+        }
+
+        .region p {
+            color: #5f5f5f;
+            padding-right: 30px;
+        }
+
+        .region__banner {
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 0 0;
+        }
+
+        .region__banner h2 {
+            color: #ffffff;
+            font-size: 75px;
+            font-weight: bold;
+            line-height: 90px;
+            margin-left: -5px;
+        }
+
+        .region__banner strong {
+            color: #ffffff;
+            font-size: 200px;
+            font-weight: bold;
+            display: block;
+            margin-left: -11px;
+        }
+
+        .region .regiao-banner {
+            display: none;
+        }
+
+        /* Fim RegiÃ£o */
+
+        /* Caixote do Saber */
+
+        .package {
+            background-image: url(../images/bg-caixote.jpg);
+            padding: 0 0 50px 0;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: 50% auto;
+            background-position: left center;
+            width: auto;
+        }
+
+        .package__banner {
+            visibility: hidden;
+        }
+
+        .package h2 {
+            padding: 80px 0 0 30px;
+        }
+
+        .package p {
+            padding-left: 30px;
+        }
+
+        .package .caixotes {
+            background: url("../images/caixotes.png") no-repeat;
+            background-position: right 40px;
+        }
+
+        .package .banner-caixote {
+            display: none;
+        }
+
+        /* Fim Caixote do Saber */
+
+        /* AÃ§Ãµes */
+
+        .actions {
+            padding: 70px 0;
+        }
+
+        .actions img {
+            width: auto;
+            height: 383px;
+            margin: 0;
+            -webkit-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.18);
+            -moz-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.18);
+            box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.18);
+            border-radius: 15px;
+        }
+
+        .actions .row:last-of-type {
+            margin-top: 80px;
+        }
+
+        .actions .herois {
+            border-top: 1px solid rgba(112, 112, 112, 0.3);
+            padding-top: 70px;
+        }
+
+        .actions iframe {
+            width: 100%;
+            float: right;
+            -webkit-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.21);
+            -moz-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.21);
+            box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.21);
+        }
+
+        .actions .image {
+            text-align: right;
+        }
+
+        .actions p {
+            width: 90%;
+        }
+
+        .actions .btn {
+            text-transform: uppercase;
+            margin: 75px 0 0 0;
+            display: flex;
+            justify-content: center;
+            width: 90%;
+        }
+
+        /* Fim AÃ§Ãµes */
+
+        /* Blog */
+
+        .blog {
+            padding: 0 0 70px 0;
+        }
+
+        .blog h2 {
+            padding: 55px 0 35px 0;
+        }
+
+        .blog .card {
+            padding: 20px;
+        }
+
+        .actions__card {
+            border-radius: 20px;
+            background-color: #003652;
+            margin-bottom: 20px;
+            -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.21);
+            -moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.21);
+            box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.21);
+            text-decoration: none;
+            display: block;
+        }
+
+        .actions__card h3 {
+            padding: 25px 20px;
+            font-size: 20px;
+        }
+
+        .actions__card img {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: flex-end;
+            border-radius: 15px;
+        }
+
+        /* Fim Blog */
+
+        /* Divisor Wave*/
+        .wave-blue {
+            background-image: url(../images/bg-waves-blue.svg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            height: 300px;
+            width: 100%;
+            margin-bottom: -1px;
+        }
+
+        /* Fim Divisor Wave*/
+
+        /* Contato */
+
+        .contact {}
+
+        .contact h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .contact .partners img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 40px;
+        }
+
+        .contact .contact-form {
+            margin-top: 70px;
+        }
+
+        .contact .contact-form h2 {
+            margin-bottom: 30px;
+        }
+
+        .contact .contact-form input {
+            width: 90%;
+            height: 70px;
+            padding-left: 20px;
+            color: #fff;
+            background-color: #003652;
+            border: 0;
+            font-size: 18px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .contact .contact-form textarea {
+            width: 90%;
+            min-height: 150px;
+            padding-left: 20px;
+            color: #fff;
+            background-color: #003652;
+            border: 0;
+            font-size: 18px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            padding-top: 15px;
+        }
+
+        .contact .contact-form button {
+            width: 90%;
+            border: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .contact .contact-form iframe {
+            min-height: 580px;
+            margin-top: 75px;
+        }
+
+        /* Fim Contato */
+
+        /* Footer */
+        footer {
+            padding: 50px 0 0 0;
+        }
+
+        footer .logo-footer {
+            height: 175px;
+            width: auto;
+        }
+
+        footer ul {
+            min-height: 175px;
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        footer ul li {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        footer ul li em {
+            font-style: normal;
+            font-size: 16px;
+            display: inline-block;
+            float: left;
+            width: 75%;
+        }
+
+        footer .social {
+            border: 0;
+        }
+
+        footer .pin {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-position: center center;
+            margin-right: 20px;
+            float: left;
+        }
+
+        footer .address {
+            background-image: url("../images/pin-endereco.png");
+            background-repeat: no-repeat;
+        }
+
+        footer .mail {
+            background-image: url("../images/pin-email.png");
+            background-repeat: no-repeat;
+        }
+
+        footer .telephone {
+            background-image: url("../images/pin-telefone.png");
+            background-repeat: no-repeat;
+        }
+
+        footer .icon {
+            display: inline-block;
+            width: 31px;
+            height: 31px;
+            background-repeat: no-repeat;
+        }
+
+        footer .facebook {
+            background-image: url("../images/face.png");
+        }
+
+        footer .instagram {
+            background-image: url("../images/insta.png");
+        }
+
+        footer .twitter {
+            background-image: url("../images/twitter.png");
+        }
+
+        footer .youtube {
+            background-image: url("../images/youtube.png");
+        }
+
+        footer .social li {
+            display: inline-block;
+            padding-left: 6px;
+        }
+
+        .copyright {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #00263a;
+            margin-top: 40px;
+            padding: 40px 0;
+        }
+
+        .copyright h6 {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 13px;
+        }
+
+        .copyright p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .copyright p a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Fim Footer */
+
+        .modal {
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .modal:target {
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            z-index: +999999;
+        }
+
+        .modal-content {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            width: 500px;
+            background: #fff;
+            border-radius: 4px;
+            transform: translate(-50%, -200%);
+            transition: all 0.5s ease-in-out;
+            perspective: 1000;
+            outline: 1px solid transparent;
+            opacity: 0;
+        }
+
+        .modal:target .modal-content {
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease-in-out;
+            transition-delay: 0.5s;
+            z-index: 9999;
+            opacity: 1;
+        }
+
+        .modal-close {
+            float: right;
+            text-decoration: none;
+            padding: 22px 22px;
+            color: #fff;
+            font-weight: 800;
+            transition: all 0.5s ease-in-out;
+            z-index: +1;
+            background: rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 0 4px 0 0;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content h3 {
+            padding: 20px;
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            text-transform: uppercase;
+            background: #0d9648;
+            color: #fff;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .modal-area {
+            padding: 20px;
+        }
+
+        .modal-area p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .modal-area p:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-area p span {
+            font-weight: 700;
+            font-size: 18px;
+            color: #0d9648;
+        }
+
+        .modal-area p a {
+            display: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            background: #0d9648;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            height: 60px;
+            text-align: center;
+            line-height: 55px;
+        }
+
+        .modal-area p a i {
+            display: inline-block;
+            vertical-align: middle;
+            padding-top: 10px;
+            padding-right: 10px;
+        }
+
+        .modal-area p a i img {
+            width: 25px;
+            height: auto;
+        }
+
+        .modal ul {
+            list-style: none;
+        }
+
+        .modal ul li {
+            margin-bottom: 20px;
+        }
+
+        .modal ul li a {
+            color: #0d9648;
+        }
+
+        .modal .icon {
+            display: inline-block;
+            width: 31px;
+            height: 31px;
+            background-repeat: no-repeat;
+        }
+
+        .modal .facebook {
+            background-image: url("../images/face-modal.png");
+        }
+
+        .modal .instagram {
+            background-image: url("../images/insta-modal.png");
+        }
+
+        .modal .twitter {
+            background-image: url("../images/twitter.png");
+        }
+
+        .modal .youtube {
+            background-image: url("../images/youtube-modal.png");
+        }
+
+        .modal .social {
+            text-align: center;
+        }
+
+        .modal .social li {
+            display: inline-block;
+            padding-left: 6px;
+        }
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #fff;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #fff;
+        }
+
+        ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: #fff;
+        }
+
+        /*_____________________ RESPONSIVO _____________________*/
+
+        @media (max-width: 768px) {
+            .btn-gradient {
+                width: 100%;
+                height: 60px;
+                margin: 30px auto 0 auto;
+                font-size: 20px;
+                line-height: 60px;
+            }
+
+            iframe {
+                width: 100%;
+            }
+
+            .project .banner_project {
+                width: 100%;
+            }
+
+            .actions img {
+                width: 100%;
+                display: none;
+            }
+
+            .header .container {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .header__logo {
+                width: 22%;
+                margin-left: 15px;
+            }
+
+            .header__logo img {
+                width: 100%;
+                height: auto;
+                margin-left: -5px;
+            }
+
+            .header__nav__main {
+                font-size: 14px;
+            }
+
+            .nav__item {
+                padding: 0 5px;
+            }
+
+            .header__nav__main {
+                width: 70%;
+            }
+
+            .nav__link {
+                line-height: 55px;
+            }
+
+            .tab {
+                width: 100%;
+                clear: both;
+                border-top: 1px solid rgba(112, 112, 112, 0.2);
+                height: 50px;
+            }
+
+            .tab_menu .box {
+                margin-right: 0;
+                border: 0;
+                width: 25%;
+                display: block;
+                float: left;
+            }
+
+            .tab_menu .box a {
+                height: 50px;
+                line-height: 50px;
+                border-right: 1px solid rgba(112, 112, 112, 0.2);
+            }
+
+            .tab_menu .box a i svg {
+                height: 14px;
+                margin-right: 2px;
+            }
+
+            .banner-container .banner-1 {
+                background: url(../images/bg1-index-mobile.jpg) no-repeat 50% bottom;
+                background-size: cover;
+                padding-top: 210px;
+                height: 530px;
+            }
+
+            .banner-container .banner-1 .banner-1-content {
+                margin-top: 0;
+            }
+
+            .banner-container .banner-1 .banner-1-content h2 {
+                font-size: 30px;
+                line-height: 35px;
+            }
+
+            .banner-container .banner-1 .banner-1-content h2 strong {
+                font-size: 35px;
+            }
+
+            .banner-container .banner-1 .banner-1-content p {
+                font-size: 18px;
+                margin-top: 0px;
+            }
+
+            .banner-container .banner-2 {
+                background: url(../images/bg2-index-mobile.jpg) no-repeat 50% bottom;
+                background-size: cover;
+                padding-top: 150px;
+                height: 500px;
+            }
+
+            .banner-container .banner-2 .banner-2-content {
+                margin-top: 0;
+            }
+
+            .banner-container .banner-2 h2 {
+                font-size: 45px;
+                margin-bottom: -25px;
+            }
+
+            .banner-container .banner-2 h3 {
+                font-size: 54px;
+            }
+
+            .banner-container .banner-2 p {
+                font-size: 22px;
+            }
+
+            .banner-container .banner-3 {
+                background: url(../images/bg3-index-mobile.jpg) no-repeat 50% bottom;
+                background-size: 100% auto;
+                padding-top: 230px;
+                height: 500px;
+            }
+
+            .banner {
+                min-height: 275px;
+            }
+
+            .banner .card-banner {
+                min-height: 275px;
+            }
+
+            .banner .banner1 {
+                background-attachment: inherit;
+            }
+
+            .banner .wave {
+                height: 60px;
+            }
+
+            .divisor {
+                height: auto !important;
+                padding: 20px 0 !important;
+                margin-top: -35px;
+            }
+
+            .divisor h2 {
+                font-size: 22px;
+            }
+
+            .divisor p {
+                font-size: 16px;
+            }
+
+            .actions .row:last-of-type {
+                margin-top: 30px;
+            }
+
+            .actions .btn {
+                width: 100%;
+            }
+
+            .blog h2 {
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+
+            .divisor .btn {
+                margin-top: 0;
+            }
+
+            .btn {
+                font-size: 16px !important;
+            }
+
+            section h2 {
+                font-size: 30px;
+            }
+
+            .project .banner_project {
+                height: auto;
+            }
+
+            .project .grid_7 {
+                padding-top: 30px;
+            }
+
+            .project__card p {
+                min-height: 1px;
+            }
+
+            .region {
+                background-image: none;
+                background-size: 100% auto;
+                background-position: center bottom;
+            }
+
+            .region {
+                padding-bottom: 40px;
+                margin-bottom: 0;
+            }
+
+            .region .banner-regiao img {
+                width: 100%;
+                height: auto;
+            }
+
+            .region .banner-regiao article {
+                padding-top: 0;
+            }
+
+            .divisor h2 {
+                margin-top: 0;
+            }
+
+            .package {
+                padding: 10px 0 0 0;
+                background-image: none;
+            }
+
+            .package h2 {
+                padding: 0;
+            }
+
+            .package p {
+                padding-left: 0;
+            }
+
+            .package .caixotes {
+                background-size: 60px auto;
+                background-position: right -25px;
+            }
+
+            .package .banner-caixote {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .actions {
+                padding: 30px 0;
+            }
+
+            .actions p {
+                width: 100%;
+            }
+
+            .blog h2 {
+                margin-left: 30px;
+            }
+
+            .blog .card {
+                padding: 20px 10px;
+            }
+
+            .blog .container {
+                margin: 0;
+                margin-left: -15px;
+            }
+
+            .actions__card h3 {
+                padding: 15px;
+                font-size: 18px;
+            }
+
+            .wave-blue {
+                height: 100px;
+            }
+
+            .contact .partners {
+                text-align: center;
+            }
+
+            .contact .partners img {
+                width: 46%;
+                margin: 0 5px;
+            }
+
+            .contact .partners img:last-child {
+                display: inline-block;
+            }
+
+            .contact .contact-form {
+                margin-top: 35px;
+                padding-bottom: 40px;
+            }
+
+            .contact .contact-form input {
+                width: 100%;
+                height: 60px;
+                border-radius: 10px;
+            }
+
+            .contact .contact-form textarea {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .contact .contact-form button {
+                width: 100%;
+                height: 60px;
+            }
+
+            .contact iframe {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                min-height: 300px !important;
+                margin-top: 35px !important;
+            }
+
+            footer {
+                margin-top: 435px;
+                text-align: center;
+            }
+
+            footer .logo-footer {
+                display: inline-block;
+                float: none;
+                margin-bottom: 30px;
+            }
+
+            footer .footer__nav {
+                border: 0;
+                padding-left: 0;
+            }
+
+            footer .contact__nav {
+                border: 0;
+                padding-left: 0;
+                margin-top: 40px;
+            }
+
+            footer ul {
+                min-height: 0;
+            }
+
+            footer .footer__nav li {
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                margin-bottom: 0;
+            }
+
+            footer .footer__nav li:last-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            }
+
+            footer .footer__nav li a {
+                display: block;
+                padding: 20px 0;
+            }
+
+            footer .contact__nav span {
+                display: block;
+                float: none;
+                margin: 20px auto 7px auto;
+            }
+
+            footer .contact__nav em {
+                display: block;
+                margin: 0;
+                float: none;
+                width: 100%;
+            }
+
+            footer .social li {
+                border: 0;
+                padding: 0 7px;
+            }
+
+            .copyright {
+                margin-top: 20px;
+            }
+
+            footer .social li:last-child {
+                border: 0 !important;
+            }
+
+            .copyright {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            .modal:target {
+                z-index: +99999999;
+            }
+
+            .modal-content {
+                width: 90%;
+                margin: 0 auto;
+                top: 25%;
+            }
+
+            .modal-content h3 {
+                padding: 15px 20px;
+            }
+
+            .modal-close {
+                padding: 30px 20px;
+            }
+
+            .modal-content p a {
+                display: block;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .nav__item {
+                padding: 0 3px;
+            }
+        }
+    </style>
+</head>
+
+<body class="index">
+    <header>
+        <div class="header-content container">
+            <a href="index.html"><img src="images/logo-noiz.png" alt="Noiz"></a>
+            <div class="navegacao">
+                <nav>
+                    <ul class="header-menu-1">
+                        <li><a href="#">projeto</a></li>
+                        <li><a href="#">a região</a></li>
+                        <li><a href="#">iniciativas</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul class="header-menu-2">
+                        <li><a href="#"><i><svg id="money-bag" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                        <path id="Caminho_2896" data-name="Caminho 2896" d="M7.656,166.062a13.886,13.886,0,0,0,4.14-.5,2.008,2.008,0,0,1,.582-1.84,2.04,2.04,0,0,1,0-2.93,2.04,2.04,0,0,1,0-2.93,2.037,2.037,0,0,1,.224-3.114,8.31,8.31,0,0,0-1.111-.857,1.148,1.148,0,0,0,.268-.717A1.172,1.172,0,0,0,10.586,152H4.727a1.172,1.172,0,0,0-1.172,1.172,1.148,1.148,0,0,0,.267.715A8.386,8.386,0,0,0,0,160.789C0,165.516,4.386,166.062,7.656,166.062Zm-.006-5.688a1.753,1.753,0,0,1-.58-3.41V156.1a.586.586,0,0,1,1.172,0v.868a1.755,1.755,0,0,1,1.166,1.648.586.586,0,1,1-1.172,0,.586.586,0,1,0-.586.586,1.754,1.754,0,0,1,.592,3.406v.524a.586.586,0,0,1-1.172,0v-.52a1.755,1.755,0,0,1-1.178-1.652.586.586,0,1,1,1.172,0,.586.586,0,1,0,.586-.586Zm0,0" transform="translate(0 -146.062)" fill="#0d9648" />
+                                        <path id="Caminho_2897" data-name="Caminho 2897" d="M337.191,467h-5.312a.879.879,0,0,0,0,1.758h5.313a.879.879,0,0,0,0-1.758Zm0,0" transform="translate(-318.07 -448.758)" fill="#0d9648" />
+                                        <path id="Caminho_2898" data-name="Caminho 2898" d="M337.191,392h-5.312a.879.879,0,0,0,0,1.758h5.313a.879.879,0,0,0,0-1.758Zm0,0" transform="translate(-318.07 -376.688)" fill="#0d9648" />
+                                        <path id="Caminho_2899" data-name="Caminho 2899" d="M337.191,317h-5.312a.879.879,0,0,0,0,1.758h5.313a.879.879,0,0,0,0-1.758Zm0,0" transform="translate(-318.07 -304.617)" fill="#0d9648" />
+                                        <path id="Caminho_2900" data-name="Caminho 2900" d="M337.191,242h-5.312a.879.879,0,0,0,0,1.758h5.313a.879.879,0,0,0,0-1.758Zm0,0" transform="translate(-318.07 -232.547)" fill="#0d9648" />
+                                        <path id="Caminho_2901" data-name="Caminho 2901" d="M96.751,1.172a1.753,1.753,0,0,0-3.308,0H91.586a.585.585,0,0,0-.556.771l.915,2.822h6.313l.915-2.822a.585.585,0,0,0-.556-.771Zm0,0" transform="translate(-87.445)" fill="#0d9648" />
+                                    </svg>
+                                </i>balancete</a></li>
+                        <li><a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="17.516" height="17.488" viewBox="0 0 17.516 17.488">
+                                        <path id="writing" d="M15.483.148a.506.506,0,0,0-.716,0l-3.9,3.9H2.019A1.52,1.52,0,0,0,.5,5.569v7.087a1.52,1.52,0,0,0,1.519,1.519h.54v2.6a.506.506,0,0,0,.868.354l2.888-2.953h5.9a1.52,1.52,0,0,0,1.519-1.519V6.914l3.9-3.9a.506.506,0,0,0,0-.716ZM10.83,8.381,9.4,6.95l4.3-4.3,1.432,1.432ZM8.859,7.842,9.937,8.921l-1.849.77Zm3.858,4.814a.507.507,0,0,1-.506.506H6.1a.506.506,0,0,0-.362.152L3.571,15.532V13.668a.506.506,0,0,0-.506-.506H2.019a.507.507,0,0,1-.506-.506V5.569a.507.507,0,0,1,.506-.506H9.853L8.324,6.592a.517.517,0,0,0-.112.169l-1.4,3.364H4.077a.506.506,0,1,0,0,1.012H7.149a.512.512,0,0,0,.2-.041l3.671-1.529a.514.514,0,0,0,.169-.112l1.529-1.529ZM15.841,3.37,14.41,1.938l.716-.716,1.432,1.432Zm0,0" transform="translate(-0.4 0.1)" fill="#0d9648" stroke="#0d9648" stroke-width="0.2" />
+                                    </svg>
+                                </i>blog</a></li>
+                        <li><a href="#"><i><svg id="letters" xmlns="http://www.w3.org/2000/svg" width="18.608" height="13.789" viewBox="0 0 18.608 13.789">
+                                        <g id="Grupo_3106" data-name="Grupo 3106" transform="translate(0 0)">
+                                            <path id="Caminho_2890" data-name="Caminho 2890" d="M16.972,61H3.816a1.616,1.616,0,0,0-1.635,1.591v.53H1.635A1.616,1.616,0,0,0,0,64.712V73.2a1.616,1.616,0,0,0,1.635,1.591H14.792A1.617,1.617,0,0,0,16.427,73.2v-.53h.545a1.616,1.616,0,0,0,1.635-1.591V62.591A1.616,1.616,0,0,0,16.972,61Zm-2.455,3.182L8.6,69.945a.556.556,0,0,1-.775,0L1.91,64.182ZM1.09,72.89V64.885l3.924,3.822Zm13.7.838H1.781l4.005-4.27,1.267,1.234a1.668,1.668,0,0,0,2.32,0l1.352-1.317,4.1,4.35Zm.545-1.026L11.5,68.626l3.841-3.741Zm2.181-1.626a.539.539,0,0,1-.545.53h-.545V64.712a1.616,1.616,0,0,0-1.635-1.591H3.271v-.53a.539.539,0,0,1,.545-.53H16.972a.539.539,0,0,1,.545.53Z" transform="translate(0 -61)" fill="#0d9648" />
+                                        </g>
+                                    </svg>
+                                </i>contato</a></li>
+                        <li><a href="#"><i><svg id="user" xmlns="http://www.w3.org/2000/svg" width="11.306" height="13.551" viewBox="0 0 11.306 13.551">
+                                        <path id="Caminho_2894" data-name="Caminho 2894" d="M90.3,6.528A3.158,3.158,0,0,0,92.6,5.571a3.158,3.158,0,0,0,.956-2.308A3.159,3.159,0,0,0,92.6.956a3.263,3.263,0,0,0-4.615,0,3.158,3.158,0,0,0-.956,2.308,3.158,3.158,0,0,0,.956,2.308A3.159,3.159,0,0,0,90.3,6.528Zm0,0" transform="translate(-84.728 0)" fill="#0d9648" />
+                                        <path id="Caminho_2895" data-name="Caminho 2895" d="M11.278,251.191a8.063,8.063,0,0,0-.11-.856,6.748,6.748,0,0,0-.211-.861,4.253,4.253,0,0,0-.354-.8,3.031,3.031,0,0,0-.534-.7,2.353,2.353,0,0,0-.767-.482,2.649,2.649,0,0,0-.979-.177.993.993,0,0,0-.53.225c-.159.1-.345.224-.553.356a3.166,3.166,0,0,1-.715.315,2.777,2.777,0,0,1-1.749,0,3.159,3.159,0,0,1-.715-.315c-.206-.131-.392-.251-.553-.356a.992.992,0,0,0-.53-.225,2.646,2.646,0,0,0-.979.177,2.351,2.351,0,0,0-.767.482,3.031,3.031,0,0,0-.533.7,4.261,4.261,0,0,0-.354.8,6.763,6.763,0,0,0-.21.861,8.034,8.034,0,0,0-.11.857c-.018.259-.027.528-.027.8a2.25,2.25,0,0,0,.668,1.7,2.406,2.406,0,0,0,1.722.628H8.915a2.4,2.4,0,0,0,1.722-.628,2.249,2.249,0,0,0,.668-1.7C11.306,251.718,11.3,251.449,11.278,251.191Zm0,0" transform="translate(0 -240.771)" fill="#0d9648" />
+                                    </svg>
+                                </i>login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="banner-container">
+        <div class="banner-1">
+            <div class="banner-1-content container">
+                <h2>Contra <strong>a fome<em>não existe vacina</strong></em></h2>
+                <p>
+                    Colabore, só assim poderemos vencer
+                </p>
+                <a class="btn-gradient" href="#">Saiba como ajudar</a>
+            </div>
+        </div>
+
+        <div class="banner-2">
+            <div class="banner-2-content container">
+                <h2>PANDEMIA <strong>SEM FOME</strong></h2>
+                <p>Lutando contra 2 inimigos</p>
+                <a class="btn-gradient" href="#">Saiba como ajudar</a>
+            </div>
+        </div>
+
+        <div class="banner-3">
+        </div>
+    </main>
+    <section class="wave-green"></section>
+
+    <section class="seja">
+        <div class="seja-content container row gutters">
+            <div class="col grid_6">
+                <h2>Seja um <strong>SÓCIO TRANSFORMADOR</strong></h2>
+                <p>
+                    Com apenas uma pequena quantia por mês, você
+                    pode transformar a vida de muitas pessoas. <a href="#">Saiba mais</a>
+                </p>
+            </div>
+            <div class="col grid_6">
+                <a class="btn-gradient" href="#">Ajude com apenas R$ 10,00/ mês</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="projeto">
+        <div class="projeto-content container">
+            <h2 class="subtitulo-branco">O projeto</h2>
+            <div class="projeto-sobre">
+                <div class="projeto-itens col grid_5">
+                    <div class="projeto-foto-container">
+                        <img src="images/foto-projeto.jpg" alt="Projeto">
+                        <h3>Construindo um futuro</h3>
+                    </div>
+                </div>
+                <div class="projeto-itens col grid_7">
+                    <h3>Origem</h3>
+                    <p>
+                        A inspiração vem de uma música. De um artista que tem como marca a retratação de uma realidade pouco conhecida. As ruas e as comunidades. A letra da música NÓIZ identifica um grupo cheio de objetivos e propósitos. “…é nóiz, que corre a caminho do bem, nóiz que disse é nóiz quando não virava um vintém…”- Emicida.
+                    </p>
+                    <p>
+                        O projeto nasce no território mais miserável da Cidade de Deus, o Brejo. Em meio a ausência de água, luz e barracos, 4 amigos se uniram e entenderam que era preciso acreditar na evolução e na emancipação daquelas pessoas, através da cultura, educação, esporte e capacitação. Não nascemos para ser um projeto voltado para doação, pois entendemos o assistencialismo como emergencial. Amar, educar e profissionalizar são os 3 pilares que permeiam o conceito do nosso trabalho.
+                    </p>
+                </div>
+            </div>
+
+            <div class="missao">
+                <div class="missao-itens col grid_4">
+                    <h3>Nossa Missão</h3>
+                    <p>
+                        Contribuir na construção do futuro de crianças, adolescentes e seus familiares, promovendo transformações humanas, sociais e econômicas, possibilitando maior justiça social através da educação, profissionalização e melhoria das condições de vida nas comunidades carentes do Rio de Janeiro.
+                    </p>
+                    <img src="images/foto-missao.jpg" alt="Missão">
+                </div>
+                <div class="missao-itens col grid_4">
+                    <h3>Objetivo</h3>
+                    <p>
+                        Atuar na área de educação e profissionalização das pessoas com ações voltadas para a transformação do quadro social e cidadania. Dignidade e evolução são o nosso foco.
+                    </p>
+                    <img src="images/foto-objetivo.jpg" alt="Objetivo">
+                </div>
+                <div class="missao-itens col grid_4">
+                    <h3>Equipe</h3>
+                    <p>
+                        Composto por integrantes de formação profissional bastante diversificada, o NÓIZ tem uma coisa em comum, muita garra pra fazer a diferença na vida das pessoas. E conta hoje com um grupo de voluntários bastante atuante.
+                    </p>
+                    <img src="images/foto-equipe.jpg" alt="Equipe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="regiao container">
+        <div class="regiao-itens col grid_6">
+            <h2 class="subtitulo-verde">A Região</h2>
+            <p>
+                A Cidade de Deus surgiu como um dos projetos habitacionais criados para abrigar os moradores expulsos de favelas pela política remocionista do governo Carlos Lacerda (1960-1965).
+            </p>
+            <p>
+                Na década de 1980, o bairro já tinha ex-moradores de 63 favelas do Rio de Janeiro. Cerca de 70% dessa população vinha das favelas Praia do Pinto, Parque da Gávea, Ilha das Dragas, Parque do Leblon, Catacumba e Rocinha. Hoje, a população é de 36.515 habitantes. Destes, 9.505 (26%) são jovens. Em 2002, as imagens da favela ganharam o mundo após a estreia do filme Cidade de Deus, dirigido por Fernando Meireles. O longa, baseado num romance do escritor Paulo Lins, conta a história de como o comércio ilegal de drogas se instalou no local.
+            </p>
+            <p>
+                A produção é considerada a primeira de uma linhagem de filmes brasileiros sobre pobreza e violência urbana, que marcaram a primeira década dos anos 2000.
+            </p>
+        </div>
+        <div class="regiao-itens col grid_6">
+            <p>VEJA RIO - 16/02/2018</p>
+            <div class="regiao-itens-foto">
+                <h3>Cidade</h3>
+                <h4>de</h4>
+                <h5>deus</h5>
+            </div>
+        </div>
+    </section>
+
+    <section class="vaquinha">
+        <div class="vaquinha-content container">
+            <h2>Nossa <strong>VAQUINHA</strong> pela educação</h2>
+            <a class="btn-gradient-amarelo" href="#">participe da vakinha</a>
+        </div>
+    </section>
+
+    <section class="iniciativas container">
+        <h2 class="subtitulo-verde">CONHEÇA NOSSAS INICIATIVAS</h2>
+        <div class="iniciativas-center">
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-caixote-saber.png" alt="Caixote do Saber"></i>
+                    <p>
+                        Criado para estabelecer uma conexão entre a comunidade e a leitura, a iniciativa traz a educação como principal ferramenta na luta… contra a desigualdade. Através dos livros podem sonhar, criar e acreditar que tudo é possível.
+                    </p>
+                    <a class="btn-iniciativas" href="caixote-do-saber.html">Saiba mais</a>
+                    <img src="images/photo-caixote-saber.jpg" alt="Foto Caixote do Saber">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-aula-idiomas.png" alt="Aulas de Idiomas"></i>
+                    <p>
+                        Inglês ou espanhol? Eles escolhem a forma como podem ter contato com outra cultura, língua e costumes. As aulas contam histórias de outros… continentes.
+                    </p>
+                    <a class="btn-iniciativas" href="aulas-de-idiomas.html">Saiba mais</a>
+                    <img src="images/photo-aulas-idioma.jpg" alt="Aulas de idiomas">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-aula-reforco.png" alt="Aulas de Reforço"></i>
+                    <p>
+                        Para crianças a partir de 4 anos, as aulas ajudam no reforço semanal das atividades escolares e melhor aproveitamento dos ensinamentos…
+                    </p>
+                    <a class="btn-iniciativas" href="aulas-de-reforco.html">Saiba mais</a>
+                    <img src="images/photo-aula-reforco.jpg" alt="Aulas de Reforço">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-noiz-gradua.png" alt="Gradua Nóiz"></i>
+                    <p>
+                        Um pré-vestibular social com professores voluntários, para oferecer um boa estrutura de estudo a quem não pode pagar um cursinho.
+                    </p>
+                    <a class="btn-iniciativas" href="gradua-noiz.html">Saiba mais</a>
+                    <img src="images/photo-gradua-noiz.jpg" alt="Gradua Nóiz">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-atendimento-medico.png" alt="Atendimento Médico"></i>
+                    <p>
+                        Saúde é o nosso maior bem. Por isso, o acompanhamento médico é muito importante ao longo de toda a vida, tanto para o tratamento… como para a prevenção de doenças.
+                    </p>
+                    <a class="btn-iniciativas" href="atendimento-medico.html">Saiba mais</a>
+                    <img src="images/photo-atendimento-medico.jpg" alt="Atendimento Médico">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-atendimento-psico.png" alt="Atendimento Psicológico"></i>
+                    <p>
+                        Tratar a saúde mental das pessoas é entender seus sentimentos e orientá-las a compreender suas emoções, promovendo o bem-estar e o… desenvolvimento pessoal.
+                    </p>
+                    <a class="btn-iniciativas" href="atendimento-psicologico.html">Saiba mais</a>
+                    <img src="images/photo-atendimento-psico.jpg" alt="Atendimento Psicológico">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-sessao-cinema.png" alt="Sessão de Cinema"></i>
+                    <p>
+                        Um dos modos de expressão cultural, o cinema é capaz de despertar ideias, sentimentos e percepções através de suas histórias…<br>
+                        Além de ser uma poderosa ferramenta para instrução, educação e reflexão humanas.
+                    </p>
+                    <a class="btn-iniciativas" href="sessao-de-cinema.html">Saiba mais</a>
+                    <img src="images/photo-sessao-cinema.jpg" alt="Sessão de Cinema">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-aula-teatro.png" alt="Aula de Teatro"></i>
+                    <p>
+                        A arte é transformadora. Capaz de integrar, socializar ideias e desenvolver sua aprendizagem de forma lúdica, o teatro desenvolve também a… parte indutiva e racional através da expressão de suas emoções, levando ao conhecimento de si mesmo e do mundo o cerca.
+                    </p>
+                    <a class="btn-iniciativas" href="aula-de-teatro.html">Saiba mais</a>
+                    <img src="images/photo-teatro-infantil.jpg" alt="Aula de Teatro">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-neuro-pediatrico.png" alt="Neuro Pediátrico"></i>
+                    <p>
+                        Ser inclusivo não pode estar só no discurso. É preparar o espaço e ter uma equipe multidisciplinar qualificada para receber…<br>
+                        e orientar as famílias da comunidade que nunca tiveram acesso ao tratamento.
+                    </p>
+                    <a class="btn-iniciativas" href="neuropediatrico.html">Saiba mais</a>
+                    <img src="images/photo-neuro-pediatrico.jpg" alt="Neuro Pediátrico">
+                </div>
+            </div>
+
+            <div class="iniciativas-box">
+                <div class="iniciativas-box-content">
+                    <i><img src="images/ico-cursos-prof.png" alt="Cursos Profissionalizantes"></i>
+                    <p>
+                        Profissionalizar pessoas é descobrir aptidões e gerar oportunidades que tragam pertencimento e melhoria de vida e autoestima.
+                    </p>
+                    <a class="btn-iniciativas" href="cursos-profissionalizantes.html">Saiba mais</a>
+                    <img src="images/photo-curso-profi.jpg" alt="Cursos Profissionalizantes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seja-socio">
+        <div class="seja-socio-content-desk container">
+            <h2>Seja um SÓCIO TRANSFORMADOR</h2>
+            <p>
+                Com apenas R$ 10,00 por mês, você se torna um Sócio Transformador e pode transformar a vida de muitas pessoas.
+            </p>
+            <div class="row gutters">
+                <div class="col grid_6">
+                    <a class="btn-sem-fundo" href="#">Saiba mais</a>
+                </div>
+                <div class="col grid_6">
+                    <a class="btn-gradient-amarelo" href="#">R$ 10 POR MÊS</a>
+                    <span>25 pessoas estão ajudando</span>
+                </div>
+            </div>
+        </div>
+        <div class="seja-socio-content-mobile container">
+            <h2>Sócio transformador</h2>
+
+            <p>
+                Com apenas R$ 10,00 por mês, você se torna um Sócio Transformador e pode transformar a vida de muitas pessoas.
+            </p>
+            <span>25 pessoas estão ajudando</span>
+            <div class="row gutters">
+                <div class="col grid_6">
+                    <a class="btn-gradient-amarelo" href="#">R$ 10 POR MÊS</a>
+                </div>
+                <div class="col grid_6">
+                    <a class="btn-sem-fundo" href="#">Saiba mais</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="blog">
+        <div class="container">
+            <h2 class="subtitulo-verde">Nóiz na mídia</h2>
+            <div class="row blog-center">
+                <div class="card">
+                    <a href="https://www.meiahora.com.br/alo-comunidade/2021/01/6068189-resgatando-sorrisos.html#foto=1" class="actions__card" target="_blank">
+                        <h3>Meia Hora - Alô Comunidade</h3>
+                        <img src="images/meia-hora-alo-comunidade.jpg" alt="Banner Blog 4">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://g1.globo.com/rj/rio-de-janeiro/noticia/2020/07/15/ong-instala-minibiblioteca-feita-de-caixotes-na-cidade-de-deus.ghtml" class="actions__card" target="_blank">
+                        <h3>G1 - Rio de Janeiro</h3>
+                        <img src="images/g1.jpg" alt="Banner Blog 4">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://recordtv.r7.com/domingo-espetacular/videos/mulher-salva-bebe-de-incendio-em-comunidade-no-rio-de-janeiro-26102020" class="actions__card" target="_blank">
+                        <h3>R7 - Domingo Espetacular</h3>
+                        <img src="images/r7.jpg" alt="Banner Blog 4">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://globoplay.globo.com/v/8761376/programa/" class="actions__card" target="_blank">
+                        <h3>Globo Comunidade</h3>
+                        <img src="images/globoplay.jpg" alt="Banner Blog 4">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.sonoticiaboa.com.br/2020/08/02/discurso-de-mata-nao-espalhe-amor-nas-redes-campanha/" class="actions__card" target="_blank">
+                        <h3>Só Notícia Boa - Brasil</h3>
+                        <img src="images/sonoticiaboa2.jpg" alt="Banner Blog 4">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.vozdascomunidades.com.br/comunidades/ong-da-cidade-de-deus-cria-biblioteca-para-moradores-em-maior-vulnerabilidade-social/" target="_blank" class="actions__card">
+                        <h3>Vóz das Comunidades</h3>
+                        <img src="images/viz.jpg" alt="Banner Blog 6">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.sonoticiaboa.com.br/2020/07/04/caixote-saber-criancas-extase-cidade-deus-livros/" class="actions__card" target="_blank">
+                        <h3>Só Notícia Boa - Boas Ações</h3>
+                        <img src="images/sonoticiaboa.jpg" alt="Banner Blog 4">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.meiahora.com.br/geral/2020/06/5941715-pais-de-joao-pedro-vao-a--ong-noiz--conferir-homenagem-ao-filho.html" class="actions__card" target="_blank">
+                        <h3>Jornal Meia Hora - Geral </h3>
+                        <img src="images/meia_hora.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://recordtv.r7.com/balanco-geral-rj/videos/coronavirus-ongs-criam-forca-tarefa-para-ajudar-moradores-da-cidade-de-deus-03042020" class="actions__card" target="_blank">
+                        <h3>Balanço Geral RJ</h3>
+                        <img src="images/balanco_geral_rio.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://oglobo.globo.com/rio/essencia-da-cidade-de-deus-donas-de-casa-fabricam-perfumes-com-treinamento-de-empresa-francesa-1-24111492https://oglobo.globo.com/rio/moradores-de-localidade-mais-carente-da-cidade-de-deus-recebem-200-cestas-basicas-1-24327314" class="actions__card" target="_blank">
+                        <h3>O Globo</h3>
+                        <img src="images/coluna_bairros05.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://oglobo.globo.com/rio/essencia-da-cidade-de-deus-donas-de-casa-fabricam-perfumes-com-treinamento-de-empresa-francesa-1-24111492" class="actions__card" target="_blank">
+                        <h3>O Globo</h3>
+                        <img src="images/coluna_bairros04.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://oglobo.globo.com/rio/brejo-localidade-da-cidade-de-deus-tera-intervencao-artistica-no-proximo-sabado-23959071" class="actions__card" target="_blank">
+                        <h3>O Globo</h3>
+                        <img src="images/coluna_bairros03.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://oglobo.globo.com/rio/bairros/ong-noiz-na-cidade-de-deus-solicita-voluntarios-para-aulas-de-alfabetizacao-23361588" class="actions__card" target="_blank">
+                        <h3>O Globo - Bairros</h3>
+                        <img src="images/coluna_bairros02.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://oglobo.globo.com/rio/bairros/projetos-sociais-recem-criados-na-barra-saem-do-papel-apesar-da-crise-22946520" class="actions__card" target="_blank">
+                        <h3>O Globo - Bairros</h3>
+                        <img src="images/coluna_bairros01.jpg" width="366" height="327" alt="" />
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://blogs.oglobo.globo.com/marina-caruso/post/criancas-da-cidade-de-deus-ganharao-visual-de-idolos-como-neymar.html" class="actions__card" target="_blank">
+                        <h3>O Globo - Coluna Marina Caruso </h3>
+                        <img src="images/materia_marina_caruso.jpg" alt="Banner Blog 3">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://oglobo.globo.com/rio/populacao-miseravel-vive-esquecida-pelo-estado-em-favela-nascida-nas-olimpiadas-22972675" class="actions__card" target="_blank">
+                        <h3>Matéria Capa Globo</h3>
+                        <img src="images/img_blog5.jpg" alt="Banner Blog 5">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://blogs.oglobo.globo.com/ancelmo/post/artista-transforma-criancas-de-favela-do-rio-em-super-herois.html" class="actions__card" target="_blank">
+                        <h3>Nota Alcemo Gois</h3>
+                        <img src="images/img_blog1.jpg" alt="Banner Blog 1">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="wave-blue"></section>
+
+    <section class="parceiros">
+        <div class="parceiros-content container">
+            <h2 class="subtitulo-branco">Parcerias</h2>
+            <ul>
+                <li><a href="#"><img src="images/logo-mobi.png" alt="Mobi2Buy"></a></li>
+                <li><a href="#"><img src="images/logo-brief.png" alt="BriefCom"></a></li>
+                <li><a href="#"><img src="images/logo-grupoHumaita.png" alt="Grupo Humaitá"></a></li>
+                <li><a href="#"><img src="images/logo_zoop.png" alt="Zoop"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contato">
+        <div class="contato-content container row gutters">
+            <div class="col grid_6">
+                <h2 class="subtitulo-branco">Entre em contato</h2>
+                <form action="">
+                    <input type="text" placeholder="Nome">
+                    <input type="e-mail" placeholder="E-mail">
+                    <input type="text" placeholder="Assunto">
+                    <textarea placeholder="Escreva aqui a sua mensagem"></textarea>
+                    <button class="btn-gradient-amarelo">Enviar</button>
+                </form>
+            </div>
+            <div class="col grid_6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3674.0402485877053!2d-43.36839228503364!3d-22.94874478499051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAv.%20Cidade%20de%20Deus%2C%20000%20-%20Rocinha%202%20-%20Karat%C3%AA!5e0!3m2!1spt-BR!2sbr!4v1622897484084!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container row gutters">
+            <div class="col-1 col grid_2">
+                <img src="images/logo-noiz-footer.png" alt="Noiz">
+            </div>
+            <div class="col-2 col grid_3">
+                <nav>
+                    <ul>
+                        <li><a href="#">Projeto</a></li>
+                        <li><a href="#">A Região</a></li>
+                        <li><a href="#">Caixote do Saber</a></li>
+                        <li><a href="#">Ações</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-3 col grid_5">
+                <h3>Contato</h3>
+                <ul>
+                    <li>
+                        <i>
+                            <svg id="pin" xmlns="http://www.w3.org/2000/svg" width="11.964" height="17.946" viewBox="0 0 11.964 17.946">
+                                <g id="Group_3048" data-name="Group 3048" transform="translate(0)">
+                                    <path id="Path_2886" data-name="Path 2886" d="M91.315,0a5.983,5.983,0,0,0-5.264,8.825l4.937,8.928a.374.374,0,0,0,.654,0l4.939-8.931A5.983,5.983,0,0,0,91.315,0Zm0,8.973a2.991,2.991,0,1,1,2.991-2.991A2.994,2.994,0,0,1,91.315,8.973Z" transform="translate(-85.333)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </i>
+                        <span>
+                            Av. das Américas,7607 - sala 314 - Barra da Tijuca.
+                            Shopping Novo Leblon
+                        </span>
+                    </li>
+                    <li>
+                        <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.641" height="14.731" viewBox="0 0 19.641 14.731">
+                                <path id="Icon_awesome-envelope" data-name="Icon awesome-envelope" d="M19.269,9.364a.231.231,0,0,1,.372.18v7.845A1.842,1.842,0,0,1,17.8,19.231H1.841A1.842,1.842,0,0,1,0,17.389V9.548a.229.229,0,0,1,.372-.18c.859.667,2,1.515,5.912,4.358.809.591,2.175,1.834,3.537,1.826,1.37.012,2.762-1.258,3.541-1.826C17.274,10.883,18.41,10.032,19.269,9.364ZM9.821,14.321c.89.015,2.171-1.12,2.816-1.588,5.091-3.694,5.478-4.016,6.652-4.937a.918.918,0,0,0,.353-.725V6.341A1.842,1.842,0,0,0,17.8,4.5H1.841A1.842,1.842,0,0,0,0,6.341V7.07A.924.924,0,0,0,.353,7.8C1.527,8.712,1.914,9.038,7,12.732,7.649,13.2,8.931,14.336,9.821,14.321Z" transform="translate(0 -4.5)" fill="#fff" />
+                            </svg>
+                        </i>
+                        <span>noizprojetosocial@gmail.com</span>
+                    </li>
+                    <li>
+                        <i>
+                            <svg id="call" xmlns="http://www.w3.org/2000/svg" width="15.803" height="15.803" viewBox="0 0 15.803 15.803">
+                                <g id="Group_3046" data-name="Group 3046">
+                                    <path id="Path_2884" data-name="Path 2884" d="M14.535,10.373a8.972,8.972,0,0,1-2.818-.449,1.288,1.288,0,0,0-1.253.264L8.688,11.529A9.82,9.82,0,0,1,4.273,7.115l1.3-1.731A1.277,1.277,0,0,0,5.889,4.09a8.986,8.986,0,0,1-.451-2.822A1.269,1.269,0,0,0,4.17,0h-2.9A1.269,1.269,0,0,0,0,1.268,14.551,14.551,0,0,0,14.535,15.8,1.269,1.269,0,0,0,15.8,14.535V11.641A1.27,1.27,0,0,0,14.535,10.373Z" fill="#fff" />
+                                </g>
+                            </svg>
+                        </i>
+                        <span>55 (21) 2438.2569</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4 col grid_2">
+                <ul>
+                    <li><a href="#"><img src="images/ico-footer-facebook.svg" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="images/ico-footer-instagran.svg" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="images/ico-footer-youtube.svg" alt="Youtube"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <h6>Copyright © NOIZ - Todos os Direitos Reservados.</h6>
+            <p>Desenvolvido por <a href="#">MOBI2BUY</a></p>
+        </div>
+    </footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        $('.banner-container').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            arrows: false,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 5000,
+        });
+    </script>
+    <script>
+        $(".iniciativas-center").slick({
+            centerMode: false,
+            centerPadding: '20px',
+            slidesToShow: 3,
+            focusOnSelect: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            infinite: false,
+            arrows: true,
+            dots: true,
+            responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        dots: true,
+                        centerMode: true,
+                        centerPadding: '00px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        dots: true,
+                        centerMode: true,
+                        centerPadding: '00px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
+    <script>
+        $(".blog-center").slick({
+            centerMode: false,
+            centerPadding: '20px',
+            slidesToShow: 3,
+            focusOnSelect: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            infinite: false,
+            arrows: true,
+            dots: true,
+            responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        dots: true,
+                        centerMode: true,
+                        centerPadding: '00px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        dots: true,
+                        centerMode: true,
+                        centerPadding: '00px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
